@@ -1,0 +1,26 @@
+﻿@model DataAccess.Entities.VacationRequest
+@{
+    ViewBag.Title = "Vacation's Requests Management";
+    Layout = ViewBag.Message;
+
+}
+<div id="EmployeesManagementPage">
+    <table id="vacationsRequestsTable" width="100%">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.ID)</th>
+                <th>@Html.DisplayNameFor(model => model.VacationType)</th>
+                <th>@Html.DisplayNameFor(model => model.StartDate)</th>
+                <th>@Html.DisplayNameFor(model => model.EndDate)</th>
+                <th>@Html.DisplayNameFor(model => model.VacationDuration)</th>
+                <th>@Html.DisplayNameFor(model => model.Status)</th>
+                <th>@Html.DisplayNameFor(model => model.EmployeeID)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<script type="text/javascript" src="~/js/VacationsRequestsTable4Manager.js"></script>
+<script>
+    $(document).ready(link4);
+</script>

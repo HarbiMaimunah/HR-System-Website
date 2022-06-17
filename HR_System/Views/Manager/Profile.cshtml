@@ -1,0 +1,27 @@
+﻿@model DataAccess.Entities.Employee
+@{
+    ViewBag.Title = "Profile";
+    Layout = ViewBag.Message;
+}
+<div class="ProfilePage">
+    <h2><b>Profile</b></h2>
+    <br />
+    <h4><b>Manager Information</b></h4>
+    <p><b>@Html.DisplayNameFor(model => model.ID):</b> @Html.DisplayFor(model => model.ID)</p>
+    <p><b>@Html.DisplayNameFor(model => model.FirstName):</b> @Html.DisplayFor(model => model.FirstName)</p>
+    <p><b>@Html.DisplayNameFor(model => model.LastName):</b> @Html.DisplayFor(model => model.LastName)</p>
+    @if (Model.Gender != null)
+    {
+        <p><b>@Html.DisplayNameFor(model => model.Gender):</b> @Html.DisplayFor(model => model.Gender)</p>
+    }
+    @if (Model.BirthDate != null)
+    {
+        <p><b>@Html.DisplayNameFor(model => model.BirthDate):</b> @Html.DisplayFor(model => model.BirthDate)</p>
+    }
+    <p><b>@Html.DisplayNameFor(model => model.MobileNumber):</b> @Html.DisplayFor(model => model.MobileNumber)</p>
+    <p><b>@Html.DisplayNameFor(model => model.EmailAddress):</b> @Html.DisplayFor(model => model.EmailAddress)</p>
+    <p><b>@Html.DisplayNameFor(model => model.JobTitle):</b> @Html.DisplayFor(model => model.JobTitle)</p>
+</div>
+<script>
+        $(document).ready(link1);
+</script>

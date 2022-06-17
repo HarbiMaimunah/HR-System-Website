@@ -1,0 +1,71 @@
+﻿@model DataAccess.Entities.EmployeeRequest
+@{
+    ViewBag.Title = "Edit Request";
+    Layout = ViewBag.Message;
+}
+<div id="newRequestPage">
+
+    <form asp-controller="Employee" method="post" enctype="multipart/form-data" >
+
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            <h2>Edit Request</h2>
+            <hr />
+            <p class="text-danger">@TempData["DraftUpdateError"]</p>
+
+            @Html.HiddenFor(model => model.Request.ID)
+
+            <div class="form-group">
+                <span class="text-danger">* </span>@Html.LabelFor(model => model.Request.VacationType, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.DropDownListFor(model => model.Request.VacationType, new List<SelectListItem> {
+                        new SelectListItem{Text="Annual", Value="Annual"},
+                        new SelectListItem{Text="Sick", Value="Sick"},
+                        new SelectListItem{Text="Leave", Value="Leave"},
+                        new SelectListItem{Text="Exceptional", Value="Exceptional"}
+               }, htmlAttributes: new { @class = "form-select col-md-12" })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Request.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })<span class="text-danger">*</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.Request.StartDate, new { htmlAttributes = new { @class = "form-control col-md-5" } })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Request.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })<span class="text-danger">*</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.Request.EndDate, new { htmlAttributes = new { @class = "form-control col-md-5" } })
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Attachment, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.Attachment, new { htmlAttributes = new { @class = "form-control custom-file-input col-md-5" } })
+                </div>
+            </div>
+
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-5">
+                    <input type="submit" value="Request" formaction="SubmitDraft" class="btn btn-primary" />
+                    <input type="submit" value="Save Draft" formaction="UpdateRequest" class="btn btn-secondary" />
+
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+<div class="col-md-5">
+    @Html.ActionLink("Back to List", "TicketsList")
+</div>
+<script>
+    $(document).ready(link2);
+</script>

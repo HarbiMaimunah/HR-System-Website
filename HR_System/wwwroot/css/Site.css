@@ -1,0 +1,94 @@
+﻿body {
+    overflow: hidden;
+    overflow-y: auto;
+    margin-left: 95px;
+}
+header {
+    background-color: whitesmoke;
+    border-bottom: 1px solid #DCDCDC;
+    height: 86px;
+    margin-bottom: 5%;
+}
+#logoImg {
+    position: relative;
+    left: 7%;
+    bottom: -5px;
+}
+.sidemenu {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 95px;
+    background-color: #686868;
+    z-index: 1;
+    padding-top: 100px;
+    overflow: hidden;
+}
+
+    .sidemenu a {
+        padding: 8px 8px 8px 10px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        display: block;
+    }
+
+        .sidemenu a:hover {
+            cursor: pointer;
+            color: #c9bdf8;
+        }
+#topMenu {
+    position: relative;
+    bottom: 70px;
+}
+#bottomMenu {
+    position: fixed;
+    top: 84%;
+    left: 14px;
+}
+    #bottomMenu a:hover {
+        color: #ffcccc;
+    }
+footer {
+    background-color: #acacac;
+    text-align: center;
+    color: white;
+    height: 45px;
+    padding-top: 14px;
+    margin-top: 5%;
+}
+.ProfilePage{
+    text-align: center;
+}
+.requestDetails {
+    text-align: center;
+}
+.sidemenu a div {
+    font-size: 12px;
+}
+.fancyBtn {
+    background: linear-gradient(67deg, rgba(146,122,240,1) 39%, rgba(201,189,248,1) 84%, rgba(228,222,252,1) 100%);
+    padding: 15px;
+    border-radius: 5%;
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    margin-left: 50px;
+    position: relative;
+    bottom: 27px;
+}
+.fancyBtn:hover {
+    color: white;
+    text-decoration: none;
+}
+#RequestsPage #draftBtn {
+    margin-left: 2px;
+}
+.form-horizontal h2{
+    margin-left: 95px;
+}
+.formError {
+    margin-left: 95px;
+}

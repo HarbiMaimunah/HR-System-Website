@@ -1,0 +1,67 @@
+﻿body{
+    overflow: hidden;
+}
+#SignInForm {
+    display: inline;
+    position: relative;
+    right: 2%;
+    top: 90px;
+}
+#SignUpForm {
+    display: inline;
+    position: relative;
+    left: 50%;
+    top: 26px;
+}
+#logo1 {
+    position: relative;
+    left: 10%;
+    top: 10px;
+    z-index: 2;
+}
+#logo {
+    position: relative;
+    left: 10%;
+    top: 10px;
+    z-index: 2;
+}
+#webName {
+    position: relative;
+    left: 12%;
+    top: 12px;
+    font-size: large;
+    color: #927af0;
+    z-index: 2;
+}
+#createAccountLink, #goToSignInLink {
+    text-decoration: none;
+    
+}
+#goToSignInLink{
+    position: relative;
+    left: 10%;
+}
+#circle {
+    background-color: #927af0;
+    position: relative;
+    bottom: 515px; 
+    left: 49%;
+    height: 1000px;
+    width: 72%;
+    border-radius: 100%;
+    z-index: 1;
+}
+.form-control{
+    width: 40%
+}
+#createAccountLink, h1{
+    position: relative;
+    left: 9%
+}
+a:hover{
+    cursor: pointer;
+}
+.homePageError{
+    position: relative;
+    left: 9%;
+}

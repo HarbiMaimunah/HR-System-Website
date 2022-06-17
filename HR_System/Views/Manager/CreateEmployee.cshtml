@@ -1,0 +1,88 @@
+﻿@model DataAccess.Entities.Employee
+@{ 
+    ViewBag.Title = "Create New Employee Record";
+    Layout = ViewBag.Message;
+}
+<div id="createEmployeePage">
+    @using (Html.BeginForm("CreateEmployee", "Manager", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h2>New Employee</h2>
+        <hr />
+        <p class="text-danger">@TempData["EmployeeRecordCreationError"]</p>
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })<span class="text-danger">*</span>
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control col-md-5" } })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <span class="text-danger">* </span>@Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-5">
+            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control col-md-5" } })
+        </div>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.RadioButtonFor(model => model.Gender, "Female", htmlAttributes: new { @class = "form-check-input col-md-1", @Name = "employeeGender" }) Female
+                <br />
+                @Html.RadioButtonFor(model => model.Gender, "Male", htmlAttributes: new { @class = "form-check-input col-md-1", @Name = "employeeGender" }) Male
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.BirthDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control col-md-5" } })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <span class="text-danger">*</span>@Html.LabelFor(model => model.MobileNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.MobileNumber, new { htmlAttributes = new { @class = "form-control col-md-5" } })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <span class="text-danger">*</span>@Html.LabelFor(model => model.EmailAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control col-md-5" } })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <span class="text-danger">* </span>@Html.LabelFor(model => model.JobTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.DropDownListFor(model => model.JobTitle, new List<SelectListItem> {
+                    new SelectListItem{Text="Database Administrator", Value="Database Administrator"},
+                    new SelectListItem{Text="Software Developer", Value="Software Developer"},
+                    new SelectListItem{Text="Project Manager", Value="Project Manager"},
+                    new SelectListItem{Text="Software Engineering Director", Value="Software Engineering Director"},
+                    new SelectListItem{Text="HR Director", Value="HR Director"},
+                    new SelectListItem{Text="HR Specialist", Value="HR Specialist"},
+                    new SelectListItem{Text="CEO", Value="CEO"}
+           }, htmlAttributes: new { @class = "form-select col-md-12" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-5">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+    }
+    <br />
+    <div class="col-md-5">
+        @Html.ActionLink("Back to List", "Employees")
+    </div>
+</div>
+<script>
+    $(document).ready(link3);
+</script>

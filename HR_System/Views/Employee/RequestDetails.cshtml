@@ -1,0 +1,31 @@
+﻿@model DataAccess.Entities.VacationRequest
+@{
+    ViewBag.Title = "Request Details";
+    Layout = ViewBag.Message;
+
+}
+<div class="requestDetails">
+    <h2><b>Details</b></h2>
+    <br />
+    <h4><b>Request Information</b></h4>
+    <p><b>@Html.DisplayNameFor(model => model.ID):</b> @Html.DisplayFor(model => model.ID)</p>
+    <p><b>@Html.DisplayNameFor(model => model.VacationType):</b> @Html.DisplayFor(model => model.VacationType)</p>
+    <p><b>@Html.DisplayNameFor(model => model.StartDate):</b> @Html.DisplayFor(model => model.StartDate)</p>
+    <p><b>@Html.DisplayNameFor(model => model.EndDate):</b> @Html.DisplayFor(model => model.EndDate)</p>
+    <p><b>@Html.DisplayNameFor(model => model.VacationDuration):</b> @Html.DisplayFor(model => model.VacationDuration)</p>
+    <p><b>@Html.DisplayNameFor(model => model.Status):</b> @Html.DisplayFor(model => model.Status)</p>
+    @if (Model.RejectionReason != null)
+    {
+        <p><b>@Html.DisplayNameFor(model => model.RejectionReason):</b> @Html.DisplayFor(model => model.RejectionReason)</p>
+    }
+    @if (Model.AttachmentName != null)
+    {
+        <a href="../../Employee/DownloadAttachment?fileDownloadName=@Model.AttachmentName"><i class="fa fa-paperclip" aria-hidden="true"></i> Download Attachment</a>
+    }
+</div>
+<div class="col-md-5">
+    @Html.ActionLink("Back to List", "MyVacationsRequests")
+</div>
+<script>
+    $(document).ready(link2);
+</script>

@@ -1,0 +1,50 @@
+﻿@model DataAccess.Entities.VacationRequestResponse
+@{
+    ViewBag.Title = "Vacation's Request Response";
+    Layout = ViewBag.Message;
+}
+<div id="createEmployeePage">
+    @using (Html.BeginForm("RespondToRequest", "Manager", FormMethod.Post, new { Response = Model }))
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h2>Send Response</h2>
+        <hr />
+        @Html.HiddenFor(model => model.ID)
+        <p class="text-danger formError">@TempData["VacationRequestResponseError"]</p>
+        <div class="form-group">
+            <span class="text-danger">* </span>@Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.DropDownListFor(model => model.Status, new List<SelectListItem> {
+                    new SelectListItem{Text="Accepted", Value="Accepted"},
+                    new SelectListItem{Text="Rejected", Value="Rejected"}
+           }, htmlAttributes: new { @class = "form-select col-md-12" })
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RejectionReason, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.RejectionReason, new { htmlAttributes = new { @class = "form-control col-md-5" } })
+            </div>
+        </div>
+        <br />
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-5">
+                <input type="submit" value="Send" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+    }
+    <br />
+    <div class="col-md-5">
+        @Html.ActionLink("Back to List", "VacationsRequests")
+    </div>
+</div>
+<script>
+    $(document).ready(link4);
+</script>

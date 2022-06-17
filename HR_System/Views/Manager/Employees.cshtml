@@ -1,0 +1,26 @@
+﻿@model DataAccess.Entities.Employee
+@{
+    ViewBag.Title = "Employees Management";
+    Layout = ViewBag.Message;
+
+}
+<div id="EmployeesManagementPage">
+<p><a href="CreateEmployee" class="fancyBtn">Add New Employee</a></p>
+<table id="employeesTable" width="100%">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.ID)</th>
+            <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+            <th>@Html.DisplayNameFor(model => model.LastName)</th>
+            <th>@Html.DisplayNameFor(model => model.MobileNumber)</th>
+            <th>@Html.DisplayNameFor(model => model.EmailAddress)</th>
+            <th>@Html.DisplayNameFor(model => model.JobTitle)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+</table>
+</div>
+<script type="text/javascript" src="~/js/EmployeesTable.js"></script>
+<script>
+    $(document).ready(link3);
+</script>

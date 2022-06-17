@@ -1,0 +1,39 @@
+﻿@model DataAccess.Entities.VacationRequestWithRequester
+@{
+    ViewBag.Title = "Vacation's Request Details";
+    Layout = ViewBag.Message;
+}
+<div class="requestDetails">
+    <h2><b>Details</b></h2>
+    <br />
+    <h4><b>Request Information</b></h4>
+    <p><b>@Html.DisplayNameFor(model => model.VacationRequest.ID):</b> @Html.DisplayFor(model => model.VacationRequest.ID)</p>
+    <p><b>@Html.DisplayNameFor(model => model.VacationRequest.VacationType):</b> @Html.DisplayFor(model => model.VacationRequest.VacationType)</p>
+    <p><b>@Html.DisplayNameFor(model => model.VacationRequest.StartDate):</b> @Html.DisplayFor(model => model.VacationRequest.StartDate)</p>
+    <p><b>@Html.DisplayNameFor(model => model.VacationRequest.EndDate):</b> @Html.DisplayFor(model => model.VacationRequest.EndDate)</p>
+    <p><b>@Html.DisplayNameFor(model => model.VacationRequest.VacationDuration):</b> @Html.DisplayFor(model => model.VacationRequest.VacationDuration)</p>
+    <p><b>@Html.DisplayNameFor(model => model.VacationRequest.Status):</b> @Html.DisplayFor(model => model.VacationRequest.Status)</p>
+    @if (Model.VacationRequest.RejectionReason != null)
+    {
+        <p><b>@Html.DisplayNameFor(model => model.VacationRequest.RejectionReason):</b> @Html.DisplayFor(model => model.VacationRequest.RejectionReason)</p>
+    }
+    @if (Model.VacationRequest.AttachmentName != null)
+    {
+        <a href="../../Manager/DownloadAttachment?fileDownloadName=@Model.VacationRequest.AttachmentName" target="_blank"><i class="fa fa-paperclip" aria-hidden="true"></i> Download Attachment</a>
+    }
+    <hr />
+    <h4><b>Requester Information</b></h4>
+    <p><b>@Html.DisplayNameFor(model => model.Requester.ID):</b> @Html.DisplayFor(model => model.Requester.ID)</p>
+    <p><b>@Html.DisplayNameFor(model => model.Requester.FirstName):</b> @Html.DisplayFor(model => model.Requester.FirstName)</p>
+    <p><b>@Html.DisplayNameFor(model => model.Requester.LastName):</b> @Html.DisplayFor(model => model.Requester.LastName)</p>
+    <p><b>@Html.DisplayNameFor(model => model.Requester.EmailAddress):</b> @Html.DisplayFor(model => model.Requester.EmailAddress)</p>
+    <p><b>@Html.DisplayNameFor(model => model.Requester.MobileNumber):</b> @Html.DisplayFor(model => model.Requester.MobileNumber)</p>
+    <p><b>@Html.DisplayNameFor(model => model.Requester.JobTitle):</b> @Html.DisplayFor(model => model.Requester.JobTitle)</p>
+</div>
+<br />
+<div class="col-md-5">
+    @Html.ActionLink("Back to List", "VacationsRequests")
+</div>
+<script>
+    $(document).ready(link4);
+</script>

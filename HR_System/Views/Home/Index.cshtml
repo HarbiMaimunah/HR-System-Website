@@ -1,0 +1,117 @@
+﻿@{ 
+    TempData["isRegisteredSuccessfully"] = false;
+}
+
+@model DataAccess.Entities.UserInfo
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+    <link rel="stylesheet" href="~/css/Homepage.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="~/js/Homepage.js"></script>
+</head>
+
+<body>
+    <header>
+
+        <img src="~/images/purpleLogo.png" id="logo" height='70px' />
+
+    </header>
+
+    <div id="SignInForm">
+        <h1>Sign in</h1>
+        <p class="text-danger homePageError">@TempData["LoginError"]</p>
+        <br />
+        @using (Html.BeginForm("SignIn", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-sm-3">
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-sm-3">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Sign in" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        }
+        <br />
+        <a id="createAccountLink">Don't have an account?</a>
+    </div>
+
+
+
+    <div id="SignUpForm">
+        <h1>Create Account</h1>
+        <p class="text-danger homePageError">@TempData["RegistrationError"]</p>
+        <br />
+        @using (Html.BeginForm("Register", "Home", FormMethod.Post, new { @id = "SignUpPost"}))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-sm-3">
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EmailAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-sm-3">
+                        @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-sm-3">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+
+</div>
+
+<br />
+
+<div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Sign Up" class="btn btn-primary"/>
+                    </div>
+                </div>
+            </div>
+        }
+        <br />
+        <a id="goToSignInLink">Sign in</a>
+    </div>
+
+
+    <div id="circle">
+
+    </div>
+</body>
+</html>
+
+@if ((bool)TempData["isRegisteredSuccessfully"]==true) { 
+    <script>
+        window.alert("You have been registered successfully");
+    </script>
+}

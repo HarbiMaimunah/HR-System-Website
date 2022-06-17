@@ -1,0 +1,35 @@
+﻿@model DataAccess.Entities.EmployeeProfile
+@{
+    ViewBag.Title = "Profile";
+    Layout = ViewBag.Message;
+}
+<div class="ProfilePage">
+    <h2><b>Profile</b></h2>
+    <br />
+    <h4><b>Employee Information</b></h4>
+    <p><b>@Html.DisplayNameFor(model => model.EmployeeInfo.ID):</b> @Html.DisplayFor(model => model.EmployeeInfo.ID)</p>
+    <p><b>@Html.DisplayNameFor(model => model.EmployeeInfo.FirstName):</b> @Html.DisplayFor(model => model.EmployeeInfo.FirstName)</p>
+    <p><b>@Html.DisplayNameFor(model => model.EmployeeInfo.LastName):</b> @Html.DisplayFor(model => model.EmployeeInfo.LastName)</p>
+    @if (Model.EmployeeInfo.Gender != null)
+    {
+        <p><b>@Html.DisplayNameFor(model => model.EmployeeInfo.Gender):</b> @Html.DisplayFor(model => model.EmployeeInfo.Gender)</p>
+    }
+    @if (Model.EmployeeInfo.BirthDate != null)
+    {
+        <p><b>@Html.DisplayNameFor(model => model.EmployeeInfo.BirthDate):</b> @Html.DisplayFor(model => model.EmployeeInfo.BirthDate)</p>
+    }
+    <p><b>@Html.DisplayNameFor(model => model.EmployeeInfo.MobileNumber):</b> @Html.DisplayFor(model => model.EmployeeInfo.MobileNumber)</p>
+    <p><b>@Html.DisplayNameFor(model => model.EmployeeInfo.EmailAddress):</b> @Html.DisplayFor(model => model.EmployeeInfo.EmailAddress)</p>
+    <p><b>@Html.DisplayNameFor(model => model.EmployeeInfo.JobTitle):</b> @Html.DisplayFor(model => model.EmployeeInfo.JobTitle)</p>
+    <hr />
+    <h4><b>Manager Information</b></h4>
+    <p><b>@Html.DisplayNameFor(model => model.ManagerInfo.FirstName):</b> @Html.DisplayFor(model => model.ManagerInfo.FirstName)</p>
+    <p><b>@Html.DisplayNameFor(model => model.ManagerInfo.LastName):</b> @Html.DisplayFor(model => model.ManagerInfo.LastName)</p>
+    <p><b>@Html.DisplayNameFor(model => model.ManagerInfo.MobileNumber):</b> @Html.DisplayFor(model => model.ManagerInfo.MobileNumber)</p>
+    <p><b>@Html.DisplayNameFor(model => model.ManagerInfo.EmailAddress):</b> @Html.DisplayFor(model => model.ManagerInfo.EmailAddress)</p>
+    <p><b>@Html.DisplayNameFor(model => model.ManagerInfo.JobTitle):</b> @Html.DisplayFor(model => model.ManagerInfo.JobTitle)</p>
+</div>
+
+<script>
+        $(document).ready(link1);
+</script>

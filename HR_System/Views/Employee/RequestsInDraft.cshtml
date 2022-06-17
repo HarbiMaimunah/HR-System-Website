@@ -1,0 +1,26 @@
+﻿@model DataAccess.Entities.VacationRequest
+@{
+    ViewBag.Title = "Vacation's Requests | Draft";
+    Layout = ViewBag.Message;
+
+}
+<div id="RequestsPage">
+    <p><a href="MyVacationsRequests" class="fancyBtn">Vacation's Requests</a></p>
+    <table id="vacationsRequestsTable" width="100%">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.ID)</th>
+                <th>@Html.DisplayNameFor(model => model.VacationType)</th>
+                <th>@Html.DisplayNameFor(model => model.StartDate)</th>
+                <th>@Html.DisplayNameFor(model => model.EndDate)</th>
+                <th>@Html.DisplayNameFor(model => model.VacationDuration)</th>
+                <th>@Html.DisplayNameFor(model => model.Status)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<script src="~/js/RequestsInDraft4Employee.js"></script>
+<script>
+    $(document).ready(link2);
+</script>
